@@ -5,21 +5,21 @@
 class Jamshid < Formula
   desc "Jamshid is a CLI tool for managing multiple Claude Code profiles"
   homepage "https://github.com/PapaDanielVi/jamshid"
-  version "0.1.6"
+  version "0.1.7"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/PapaDanielVi/jamshid/releases/download/v0.1.6/jamshid_Darwin_x86_64.tar.gz"
-      sha256 "52d97537b1d54a4d1a78931aed469c807f8a0a21664d638bf919566583b151d6"
+      url "https://github.com/PapaDanielVi/jamshid/releases/download/v0.1.7/jamshid_Darwin_x86_64.tar.gz"
+      sha256 "d9ac80526861da8a2f2e288a6913fd487f9e6641090cc84900ed50bc1b01cc94"
 
       def install
         bin.install "jamshid"
       end
     end
     on_arm do
-      url "https://github.com/PapaDanielVi/jamshid/releases/download/v0.1.6/jamshid_Darwin_arm64.tar.gz"
-      sha256 "96f775a209b25ccbb3a7ac84497415e179e9c1d912b1c50be9959f9ab7f2ec84"
+      url "https://github.com/PapaDanielVi/jamshid/releases/download/v0.1.7/jamshid_Darwin_arm64.tar.gz"
+      sha256 "763a2c08f047bfb3cb727f396379835022e970c8f7c058b6c8deaba9a6f40dac"
 
       def install
         bin.install "jamshid"
@@ -30,8 +30,8 @@ class Jamshid < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/PapaDanielVi/jamshid/releases/download/v0.1.6/jamshid_Linux_x86_64.tar.gz"
-        sha256 "ec7a84829edaf3ca65baa7bce901c56e4102044c750b9cd7d841b30e320a58e9"
+        url "https://github.com/PapaDanielVi/jamshid/releases/download/v0.1.7/jamshid_Linux_x86_64.tar.gz"
+        sha256 "c92dba13ff378a34783e555579143c25773563ac69ad6a643252e019357aa472"
 
         def install
           bin.install "jamshid"
@@ -40,8 +40,8 @@ class Jamshid < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/PapaDanielVi/jamshid/releases/download/v0.1.6/jamshid_Linux_arm64.tar.gz"
-        sha256 "b376cd95e4ef054b40f2fb07c987ae9d356f862f75f8c0c6ec4dcf45e760c896"
+        url "https://github.com/PapaDanielVi/jamshid/releases/download/v0.1.7/jamshid_Linux_arm64.tar.gz"
+        sha256 "7b9ffafffae032611a59308818fe90574c183addac5194ee1d2b71d7928018fd"
 
         def install
           bin.install "jamshid"
