@@ -5,47 +5,41 @@
 class SecretShift < Formula
   desc "SecretShift is a CLI tool for migrating and syncing secrets and environment variables between providers"
   homepage "https://github.com/PapaDanielVi/secret-shift"
-  version "0.1.5"
+  version "0.1.6"
   license "MIT"
 
   on_macos do
-    on_intel do
-      url "https://github.com/PapaDanielVi/secret-shift/releases/download/v0.1.5/secret-shift_Darwin_x86_64.tar.gz"
-      sha256 "285e669f397ae8edae115dae5619cdffd6448d04e0d0074939de386c9dc2cec8"
+    if Hardware::CPU.intel?
+      url "https://github.com/PapaDanielVi/secret-shift/releases/download/v0.1.6/secret-shift_Darwin_x86_64.tar.gz"
+      sha256 "5c36b5a3c5d2c0059f6cc90daca3fe058bd3cbd0e95986763663bb2ffe379660"
 
-      def install
+      define_method(:install) do
         bin.install "secret-shift"
       end
     end
-    on_arm do
-      url "https://github.com/PapaDanielVi/secret-shift/releases/download/v0.1.5/secret-shift_Darwin_arm64.tar.gz"
-      sha256 "320532b76f26097c0eba5fc003da62482d77ceb5b669faac4491b0e174489e56"
+    if Hardware::CPU.arm?
+      url "https://github.com/PapaDanielVi/secret-shift/releases/download/v0.1.6/secret-shift_Darwin_arm64.tar.gz"
+      sha256 "dd0422816ec6b3cb8dc27d02b0b425e69fd5cca7b8fda037b796d75d756d6922"
 
-      def install
+      define_method(:install) do
         bin.install "secret-shift"
       end
     end
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/PapaDanielVi/secret-shift/releases/download/v0.1.5/secret-shift_Linux_x86_64.tar.gz"
-        sha256 "2450c960ab78a623df682ac1c0c1fb5bbd5847b78f8a8d779908e16e4ba0684e"
-
-        def install
-          bin.install "secret-shift"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/PapaDanielVi/secret-shift/releases/download/v0.1.6/secret-shift_Linux_x86_64.tar.gz"
+      sha256 "c496ebe714498213bca09b4c40b31489330726b0fe3fadd517d047822683db4a"
+      define_method(:install) do
+        bin.install "secret-shift"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/PapaDanielVi/secret-shift/releases/download/v0.1.5/secret-shift_Linux_arm64.tar.gz"
-        sha256 "fe536804f7aee3da2038ffd85b165e7df8507b2e7ca9aa1aaf41218964aaf3b9"
-
-        def install
-          bin.install "secret-shift"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/PapaDanielVi/secret-shift/releases/download/v0.1.6/secret-shift_Linux_arm64.tar.gz"
+      sha256 "c8d95ba7f85e51829e0ad807c2f954c4f2e37dc9c8f3a45681f481dda6a233a9"
+      define_method(:install) do
+        bin.install "secret-shift"
       end
     end
   end
