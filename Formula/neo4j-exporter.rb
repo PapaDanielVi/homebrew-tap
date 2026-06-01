@@ -5,21 +5,21 @@
 class Neo4jExporter < Formula
   desc "Prometheus exporter for Neo4j graph databases."
   homepage "https://github.com/PapaDanielVi/neo4j-exporter"
-  version "0.0.22"
+  version "0.0.23"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/PapaDanielVi/neo4j-exporter/releases/download/v0.0.22/neo4j-exporter_Darwin_x86_64.tar.gz"
-      sha256 "da7b8a00bb8586f58ae087266629903e9e1b9ac5adc2d73008db3702a8d1e449"
+      url "https://github.com/PapaDanielVi/neo4j-exporter/releases/download/v0.0.23/neo4j-exporter_Darwin_x86_64.tar.gz"
+      sha256 "0716a367abcaa3d6f15ea562fc7bd70c51053b9b68fa200b8ce93bfd96dc82e3"
 
       define_method(:install) do
         bin.install "neo4j-exporter"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/PapaDanielVi/neo4j-exporter/releases/download/v0.0.22/neo4j-exporter_Darwin_arm64.tar.gz"
-      sha256 "0a080c80bba583616490e2c493c843e08746d60996aae097103d8274e36db713"
+      url "https://github.com/PapaDanielVi/neo4j-exporter/releases/download/v0.0.23/neo4j-exporter_Darwin_arm64.tar.gz"
+      sha256 "0c135885ebf518d7d9c7a076cae3d360769e19f5a8393281b10de53ac1d00eb3"
 
       define_method(:install) do
         bin.install "neo4j-exporter"
@@ -29,15 +29,15 @@ class Neo4jExporter < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/PapaDanielVi/neo4j-exporter/releases/download/v0.0.22/neo4j-exporter_Linux_x86_64.tar.gz"
-      sha256 "39bfc43f002746dffd74ce928cc6a0399672684e70bf67163e7a13f8c85d34ab"
+      url "https://github.com/PapaDanielVi/neo4j-exporter/releases/download/v0.0.23/neo4j-exporter_Linux_x86_64.tar.gz"
+      sha256 "45c49bc8e3371e3270dc41bed38f38cf74526e7af55d6d4eb324cd08a07246d0"
       define_method(:install) do
         bin.install "neo4j-exporter"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/PapaDanielVi/neo4j-exporter/releases/download/v0.0.22/neo4j-exporter_Linux_arm64.tar.gz"
-      sha256 "8fcf8d840179159da4a58be07bfcb79f4b3bd438beac72b7f7d36d483e0a54c9"
+      url "https://github.com/PapaDanielVi/neo4j-exporter/releases/download/v0.0.23/neo4j-exporter_Linux_arm64.tar.gz"
+      sha256 "9e8290445f262cd81a2b5dfd882f3c6c3ecd3708a164e9d705069884edfa3a31"
       define_method(:install) do
         bin.install "neo4j-exporter"
       end
