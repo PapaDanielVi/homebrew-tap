@@ -5,21 +5,21 @@
 class Ostrakon < Formula
   desc "Ostrakon is a secure CLI tool for managing secrets in a private GitHub repository with client-side encryption."
   homepage "https://github.com/PapaDanielVi/ostrakon"
-  version "0.1.3"
+  version "0.1.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/PapaDanielVi/ostrakon/releases/download/v0.1.3/ostrakon_Darwin_x86_64.tar.gz"
-      sha256 "67230b1047efd66ad668f7812b78aac953ee14fd72d170ceca6829cf92654725"
+      url "https://github.com/PapaDanielVi/ostrakon/releases/download/v0.1.4/ostrakon_Darwin_x86_64.tar.gz"
+      sha256 "d66288c1a1f238ddb355e42531b18197d5537cb300601c1e79ac2e33f6d9b75a"
 
       define_method(:install) do
         bin.install "ostrakon"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/PapaDanielVi/ostrakon/releases/download/v0.1.3/ostrakon_Darwin_arm64.tar.gz"
-      sha256 "dbc96ea509fb7dfc5f37f1a4436ab80241027e78702b8b38b6252879bb82c008"
+      url "https://github.com/PapaDanielVi/ostrakon/releases/download/v0.1.4/ostrakon_Darwin_arm64.tar.gz"
+      sha256 "1a9811fb43d58a9813122b09a5e4e3ac0f116ad1c3d47c27491461a218b25fbd"
 
       define_method(:install) do
         bin.install "ostrakon"
@@ -29,15 +29,15 @@ class Ostrakon < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/PapaDanielVi/ostrakon/releases/download/v0.1.3/ostrakon_Linux_x86_64.tar.gz"
-      sha256 "df16373f0249a2146462386aac005dad13f070501fdd5681e49481cdf1bbf580"
+      url "https://github.com/PapaDanielVi/ostrakon/releases/download/v0.1.4/ostrakon_Linux_x86_64.tar.gz"
+      sha256 "ffb123222f968901454be3d37a31aa34d5419ce9a4e3156484a939e311b7a53c"
       define_method(:install) do
         bin.install "ostrakon"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/PapaDanielVi/ostrakon/releases/download/v0.1.3/ostrakon_Linux_arm64.tar.gz"
-      sha256 "5e73ee571b810011cd759bb3cedb1de54ab9863ceb48c49e6a0948324fabb0f4"
+      url "https://github.com/PapaDanielVi/ostrakon/releases/download/v0.1.4/ostrakon_Linux_arm64.tar.gz"
+      sha256 "e47f330525e5d84c19e40e796a53b4a17c3c92e43cdc6f9830f0098c1d7e95aa"
       define_method(:install) do
         bin.install "ostrakon"
       end
