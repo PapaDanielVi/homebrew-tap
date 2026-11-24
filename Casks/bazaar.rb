@@ -1,24 +1,24 @@
 # This file is auto-updated on stable releases of PapaDanielVi/cafebazaar_cli.
 cask "bazaar" do
-  version "1.1.0"
+  version "1.1.1"
 
   on_macos do
     on_arm do
-      sha256 "59eb5fa2d0b96adb74a58cf25543f9bbc63a2e221cba85c18f0eb3f1c7dc764e"
+      sha256 "6834754c11e6cea2d8170e3c0900b32b739aab3f05afc09f632fd73c4da429c6"
       url "https://github.com/PapaDanielVi/cafebazaar_cli/releases/download/v#{version}/bazaar_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "c4536f9836bd98257e3072c30f6625ad6b17c1c9c1e6a57e06ecb52af49d5ac9"
+      sha256 "585d42b0fde332f723cc25a97c36e4afd86e89de8a5c66d731a69b6029c52c1b"
       url "https://github.com/PapaDanielVi/cafebazaar_cli/releases/download/v#{version}/bazaar_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "468095cba7515ab8b8b5549bb1abee527b547b1fcb605de066538d0164c73f5e"
+      sha256 "40229fb67afe1c4cce9ce66297a4cad2cdac863894d5283c85c31b96061d63de"
       url "https://github.com/PapaDanielVi/cafebazaar_cli/releases/download/v#{version}/bazaar_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "b39ff7016c7a3bcc4183fb77a1593fdfdace72518b594d42ea18d05c25a7916d"
+      sha256 "b3f30eb2479772f5121c67514b7e316de1c0acff261e0926f6d360f6f201d3c6"
       url "https://github.com/PapaDanielVi/cafebazaar_cli/releases/download/v#{version}/bazaar_#{version}_linux_amd64.tar.gz"
     end
   end
