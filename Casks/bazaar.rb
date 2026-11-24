@@ -1,35 +1,30 @@
 # This file is auto-updated on stable releases of PapaDanielVi/cafebazaar_cli.
 cask "bazaar" do
-  version "1.0.1"
+  version "1.0.4"
 
   on_macos do
-    on_intel do
-      sha256 "86fd92759d14cbd2bd967d4116ae63b0ad6efd0b8a41424b642f5065024ea36e"
-      url "https://github.com/PapaDanielVi/cafebazaar_cli/releases/download/v#{version}/bazaar_#{version}_darwin_amd64.tar.gz",
-        verified: "github.com/PapaDanielVi/cafebazaar_cli"
-    end
     on_arm do
-      sha256 "9d0640969f26131907402ae69f4b402a3b22a58ab267b78eb222bd6a2a625ac3"
-      url "https://github.com/PapaDanielVi/cafebazaar_cli/releases/download/v#{version}/bazaar_#{version}_darwin_arm64.tar.gz",
-        verified: "github.com/PapaDanielVi/cafebazaar_cli"
+      sha256 "d777e6b1a47a2b888bfcc39bb6d10be4368c5f10ac55a87a6b4b139d4abe9324"
+      url "https://github.com/PapaDanielVi/cafebazaar_cli/releases/download/v#{version}/bazaar_#{version}_darwin_arm64.tar.gz"
+    end
+    on_intel do
+      sha256 "e8c26abf3bc1edf736b8d55bb984424b81a3e4c90216fcecf40693deb3ada133"
+      url "https://github.com/PapaDanielVi/cafebazaar_cli/releases/download/v#{version}/bazaar_#{version}_darwin_amd64.tar.gz"
     end
   end
-
   on_linux do
-    on_intel do
-      sha256 "d14f92df9450f9c75643999fbe2c7178f2e06192fd9204b6e8e8d62bad3024aa"
-      url "https://github.com/PapaDanielVi/cafebazaar_cli/releases/download/v#{version}/bazaar_#{version}_linux_amd64.tar.gz",
-        verified: "github.com/PapaDanielVi/cafebazaar_cli"
-    end
     on_arm do
-      sha256 "9a21498aad08448559b8417554e3431dbc7aa7718a1f03ab03bab12eedbbd385"
-      url "https://github.com/PapaDanielVi/cafebazaar_cli/releases/download/v#{version}/bazaar_#{version}_linux_arm64.tar.gz",
-        verified: "github.com/PapaDanielVi/cafebazaar_cli"
+      sha256 "11616f3e32ea8bd9333dfe03d927aad5038593f3728ae60071d6e795c9fba323"
+      url "https://github.com/PapaDanielVi/cafebazaar_cli/releases/download/v#{version}/bazaar_#{version}_linux_arm64.tar.gz"
+    end
+    on_intel do
+      sha256 "ae0c8c47f3ea0874709e5188e3b22313a984bc0cc2ff4f56e0bf1b50e1b69913"
+      url "https://github.com/PapaDanielVi/cafebazaar_cli/releases/download/v#{version}/bazaar_#{version}_linux_amd64.tar.gz"
     end
   end
 
   name "bazaar"
-  desc "CLI for CafeBazaar Android app publishing, Pishkhan releases, AAB/APK uploads, and user reviews"
+  desc "CLI for CafeBazaar Android app publishing, releases, and user reviews"
   homepage "https://github.com/PapaDanielVi/cafebazaar_cli"
 
   livecheck do
@@ -38,11 +33,11 @@ cask "bazaar" do
 
   binary "bazaar"
 
-  postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/bazaar"]
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/bazaar"], must_succeed: false
     end
   end
 
-  # No zap stanza required
+  zap :not_required
 end
